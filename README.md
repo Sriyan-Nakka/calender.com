@@ -1,2 +1,2 @@
-# calender.com
+# Calender
 A simple calender
