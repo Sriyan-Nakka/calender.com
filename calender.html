@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calender</title>
+    <link rel="shortcut icon" 
+    href="https://res.cloudinary.com/dxcywxeqq/image/upload/v1716222043/hqwsnjkanzltx6u1cyyh.png" 
+    type="image/png"
+     />
+    <style>
+      @font-face{
+      font-family: 'main-font';
+      src:url('https://res.cloudinary.com/dxcywxeqq/raw/upload/v1716221799/Rubik-VariableFont_wght_dtjv6a.ttf');
+      }
+
+      body {
+        background-color: black;
+        font-size: 150%;
+        font-family: "main-font", sans-serif;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90vh;
+      }
+      #calenderContainer {
+        text-align: center;
+        width: 220px;
+        background-color: aliceblue;
+        border: 5px solid #444648;
+        border-radius: 15px;
+    }
+    #year {
+        background-color: red;
+        color: white;
+        width: 100%;
+        font-size: 175%;
+        border-radius: 10px;
+      }
+      #month,
+      #day{
+        font-size: 20px;
+      }
+      #date {
+        font-size: 165%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="calenderContainer">
+      <div id="year">
+          0000
+        </div>
+        <p id="white">
+        <span id="month">XXXXXX</span>
+        <p id="date">00</p>
+        <p id="day">XXXXXXXX</p>
+        </p>
+    </div>
+    <script>
+        let monthDiv = document.getElementById("month");
+        let dateDiv = document.getElementById("date");
+        let yearDiv = document.getElementById("year");
+        let dayDiv = document.getElementById("day");
+
+      let date = new Date();
+      let day = date.getDate();
+      let year = date.getFullYear();
+      let dayOfWeek = date.getDay();
+      let month = date.getMonth() + 1;
+      let dayName;
+      let monthName;
+
+      switch(dayOfWeek){
+        case 1:
+          dayName = "Monday";
+          break;
+        
+        case 2:
+        dayName = "Tuesday";
+          break;
+  
+        case 3:
+        dayName = "Wednesday";
+          break;
+
+        case 4:
+        dayName = "Thursday";
+          break;
+
+        case 5:
+        dayName = "Friday";
+          break;
+
+        case 6:
+        dayName = "Saturday";
+          break;
+
+        case 7:
+        dayName = "Sunday";
+          break;
+
+      }
+
+      switch(month){
+        case 1:
+          monthName = "January";
+          break;
+
+        case 2:
+        monthName = "February";
+          break;
+
+        case 3:
+        monthName = "March";
+          break;
+
+        case 4:
+        monthName = "April";
+          break;
+
+        case 5:
+        monthName = "May";
+          break;
+
+        case 6:
+        monthName = "June";
+          break;
+
+        case 7:
+        monthName = "July";
+          break;
+
+        case 8:
+        monthName = "August";
+          break;
+
+        case 9:
+        monthName = "September";
+          break;
+
+        case 10:
+        monthName = "October";
+          break;
+ 
+        case 11:
+        monthName = "November";
+          break;
+
+        case 12:
+        monthName = "December";
+          break;
+
+      }
+      
+      console.log(day, month, monthName, year, dayOfWeek, dayName);
+
+      yearDiv.textContent = year;
+      monthDiv.textContent = monthName;
+      dateDiv.textContent = day;
+      dayDiv.textContent = dayName;
+    </script>
+  </body>
+</html>
